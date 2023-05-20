@@ -1,0 +1,39 @@
+{% extends 'shop/shop_main_page.html' %}
+{% load static %}
+{% block title %}Магазин{% endblock %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+{% endblock %}
+
+{% block link %}
+    <li class="link"><a href="{% url 'shop' %}" class="current-page"> Все товары</a></li>
+{% endblock %}
+{% block products %}
+    <div class="products">
+
+        <!-- Начало карточки-->
+        {% for product in products %}
+            <div class="card">
+                <img src="{{ product.image_url }}" alt="{{ product.title }}" class="card-img">
+                <div class="effect-to-right">
+                    <a href="{% url 'one-item' category_slug=product.category.slug prod_slug=product.slug %}"
+                       class="link-effect"> <span
+                            class="material-symbols-outlined size-40">arrow_right_alt</span>
+                    </a>
+                </div>
+                <!-- Нижняя часть -->
+                <div class="card-bottom">
+                    <a href="{{ products.get_url }}" class="card-title">{{ product.title }}</a>
+                    <ul class="card-prices margin-bottom">
+                        {% if product.discount_price %}
+                            <li class="price-discount dollar">{{ product.discount_price }}</li>
+                            <li class="price-common dollar">{{ product.price }}</li>
+                        {% else %}
+                            <li class="dollar">{{ product.price }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

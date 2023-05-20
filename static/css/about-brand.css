@@ -1,0 +1,37 @@
+.banner-idea-woman {
+    display: flex;
+    flex-direction: row;
+    margin-top: 135px;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 46px;
+    font-size: 18px;
+}
+
+
+.banner-about-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 94px;
+}
+
+.banner-idea-txt {
+    margin-bottom: 26px;
+}
+
+.banner-about-founder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

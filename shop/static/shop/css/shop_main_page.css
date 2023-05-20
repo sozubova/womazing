@@ -1,0 +1,228 @@
+.title {
+    margin-top: 190px;
+    margin-bottom: 26px;
+}
+
+.link {
+    display: inline-block;
+}
+
+.visited-link:hover {
+    color: #909090;
+    transition: 0.4s;
+}
+
+.link a::after {
+    color: #000;
+    content: ' —';
+    padding: 0 3px;
+}
+
+.link:last-child ::after {
+    content: none;
+}
+
+.current-page {
+    color: #909090;
+}
+
+.current-page:hover {
+    color: black;
+    transition: 0.4s;
+}
+
+nav {
+    margin-bottom: 60px;
+}
+
+.products-category {
+    margin-bottom: 92px;
+    max-width: 1160px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 30px;
+}
+
+
+.products-category li {
+    max-width: 350px;
+}
+
+.menu-link {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    width: 188px;
+    padding: 19px 0;
+    transition: 0.4s;
+}
+
+
+.menu-link:hover {
+    background-color: black;
+    color: #FFFFFF;
+}
+
+.counter {
+    margin-bottom: 65px;
+    font-size: 17px;
+    color: #808080;
+}
+
+/*карточки товаров*/
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 0 auto 65px auto;
+}
+
+.card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+    color: #FFFFFF;
+    height: 574px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.card-img {
+    height: 100%;
+    overflow: hidden;
+}
+
+.link-effect {
+    color: #FFFFFF;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.effect-to-right {
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card:hover > div.effect-to-right {
+    visibility: visible;
+}
+
+.card div.effect-to-right {
+    opacity: 0;
+    background: rgba(110, 156, 159, 0.64); /* Фон блока при наведении */
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+}
+
+span.size-40 {
+    font-size: 40px;
+    font-variation-settings: 'OPSZ' 40;
+}
+
+.card:hover div.effect-to-right {
+    opacity: 1;
+    transform: translate(0px, 0px) rotate(0deg);
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 24px auto 9px auto;
+    text-align: center;
+}
+
+.dollar::before {
+    content: '$';
+}
+
+.card-prices {
+    display: flex;
+    color: #9C9C9C;
+    justify-content: space-around;
+}
+
+
+.card-price-discount {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+
+.btn-transparent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 22px 37px;
+    width: 298px;
+    height: 83px;
+    border: 1px solid #6E9C9F;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    color: #6E9C9F;
+}
+
+.btn-transparent:hover {
+    background: #6E9C9F;
+    color: #FFFFFF;
+    transition: 0.4s;
+}
+
+.next-page-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.next-page-counter {
+    display: inline-block;
+    text-align: center;
+
+    border: 1px solid black;
+    width: 41px;
+    height: 41px;
+    transition: 0.4s;
+    margin-right: 14px;
+    line-height: 37px;
+    white-space: nowrap;
+}
+
+.next-page-counter:hover {
+    color: #FFFFFF;
+    background-color: black;
+}
+
+.active {
+    color: #FFFFFF;
+    background-color: black;
+}
+.prices{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.price-common {
+    text-decoration-line: line-through;
+    color: #9C9C9C;
+}
+
+.price-discount {
+    color: #998E78;
+}

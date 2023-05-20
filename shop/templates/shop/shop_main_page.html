@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+{% endblock %}
+
+{% block title %} Магазин {% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="title">Магазин</h1>
+        <div class="banner">
+            <nav class="links">
+                <ul>
+                    <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+                    <li class="link"><a href="{% url 'shop' %}" class="visited-link"> Магазин</a></li>
+                    {% block link %}
+                    {% endblock %}
+                </ul>
+            </nav>
+            <ul class="products-category">
+                <li><a href="{% url 'shop' %}" class="menu-link">Все</a></li>
+                {% for cat in category %}
+                    {% if cat.name != 'NEW_CATEGORY' %}
+                        <li><a href="{{ cat.get_slug_category }}" class="menu-link">{{ cat }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <p class="counter">Показано: {{ shown_count }} из {{ total }} товаров</p>
+            {% block products %}
+
+            {% endblock %}
+            <p class="counter">Показано: {{ shown_count }} из {{ total }} товаров</p>
+            <ul class="next-page-items">
+                <li><a href="#" class="next-page-counter active">1</a></li>
+                <li><a href="#" class="next-page-counter">2</a></li>
+                <li><a href="#"><span
+                        class="material-symbols-outlined size-40">arrow_right_alt</span></a></li>
+            </ul>
+
+        </div>
+
+    </div>
+{% endblock %}

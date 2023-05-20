@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/order-success.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+{% block title %} Корзина{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="title">Оформление заказа</h1>
+        <ul class="navigation">
+            <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+            <li class="link"><a href="{% url 'checkout' %}" class="visited-link">Оформление заказа</a></li>
+            <li class="link"><a href="{% url 'order-success' %}" class="current-page">Заказ получен</a></li>
+        </ul>
+        <div class="banner">
+            <div class="banner-success">
+                <div class="success-info">
+                    <span class="material-symbols-outlined size-96">priority</span>
+                    <ul class="order-success">
+                        <li><h3>Заказ успешно оформлен</h3></li>
+                        <li>Мы свяжемся с вами в ближайшее время!</li>
+                    </ul>
+                </div>
+                <a href="{% url 'homepage' %}" class="btn-homepage"> Перейти на главную</a>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'users/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/add-product.css' %}">
+{% endblock %}
+{% block title %}Зарегистрироваться{% endblock %}
+{% block content %}
+    <div class="container ">
+        <h1 class="title"> Регистрация</h1>
+{#        <p style="margin-top: 300px">Зарегистрироваться</p>#}
+        <form method="post" enctype="multipart/form-data" class="add-product" action="{% url 'users:registration' %}">
+            {% csrf_token %}
+            <div class="reg-form ">
+                <label for="{{ form.first_name.id_for_label }}">Имя </label>
+                {{ form.first_name }}
+                <label for="{{ form.last_name.id_for_label }}">Фамилия </label>
+                {{ form.last_name }}
+                <label for="{{ form.username.id_for_label }}">Имя пользователя </label>
+                {{ form.username }}
+                <label for="{{ form.email.id_for_label }}">Email </label>
+                {{ form.email }}
+
+                <label for="{{ form.password1.id_for_label }}">Пароль</label>
+                {{ form.password1 }}
+                {{ form.errors}}
+                <label for="{{ form.password2.id_for_label }}">Подтверждение пароля</label>
+                {{ form.password2 }}
+
+
+            <button type="submit" class="btn-text">Сохранить</button></div>
+{#            {{ form.errors }}#}
+        </form>
+    </div>
+{% endblock %}

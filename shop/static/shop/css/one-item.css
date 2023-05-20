@@ -1,0 +1,134 @@
+.margin-bottom {
+    margin-bottom: 59px;
+}
+
+.visited-link:hover {
+    color: #909090;
+}
+
+.product-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 102px;
+}
+
+.product-img {
+    width: 536px;
+    height: 100%;
+}
+
+.product-characteristic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 347px;
+    margin-left: 74px;
+    font-size: 18px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: row;
+    width: 275px;
+    justify-content: space-between;
+
+}
+
+.price-common {
+    text-decoration-line: line-through;
+    color: #9C9C9C;
+    font-size: 30px;
+}
+
+.price-discount {
+    font-size: 40px;
+    color: #998E78;
+}
+
+.choose-size p {
+    margin-bottom: 34px;
+}
+
+.sizes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.size-button {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    transition: 0.4s;
+    width: 46px;
+    height: 46px;
+    padding-top: 6px;
+    font-size: 17px;
+    margin-right: 14px;
+}
+
+
+.size-button:hover {
+    color: #FFFFFF;
+    background-color: black;
+}
+
+.choose-color {
+    width: 206px;
+}
+
+.choose-color p {
+    margin-bottom: 34px;
+}
+
+.color {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.color-button {
+    width: 41px;
+    height: 41px;
+    border-radius: 100px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+
+}
+
+.color-button:hover {
+    border: 1px solid #000000;
+}
+
+/*.color-brown {*/
+/*    background: linear-gradient(0deg, #927876, #927876), #927876;*/
+/*}*/
+.color-choice-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.color-white {
+    background: #D5D5D5;
+}
+
+.current-color {
+    border: 1px solid #000000;
+}
+
+.color-pink {
+    background: #FD9696;
+}
+
+.color-orange {
+    background: #FDC796
+}
+
+.banner-subtitle {
+    margin-bottom: 67px;
+}
+
+.margin-null {
+    margin: 0;
+}

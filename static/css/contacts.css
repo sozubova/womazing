@@ -1,0 +1,71 @@
+
+.map {
+    background-color: #DDDDDD;
+    font-size: 17px;
+    text-align: center;
+    /* height: 476px; */
+    padding: 209px 0;
+}
+
+.list-of-contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 943px;
+}
+
+.contact-list {
+    display: inline-block;
+    flex-direction: column;
+}
+
+.contact-item {
+    margin-bottom: 13px;
+}
+
+.feedback {
+    width: 443px;
+    font-size: 17px;
+}
+
+.forms {
+    margin: 62px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.form-item {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #000000;
+    color: #868686;
+    font-size: 18px;
+}
+
+.form-msg {
+    width: 443px;
+    resize: none;
+}
+
+.btn-send {
+    background: #6E9C9F;
+    line-height: 1.4em;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 22px 80px;
+
+}
+
+.btn-send:hover {
+    background: #509498;
+}
+
+.successfully-sent {
+    padding: 30px 76px;
+    background: #F1EADC;
+}

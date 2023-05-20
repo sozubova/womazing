@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+{% endblock %}
+{#{% block js_additional %} <script src="{% static 'js/cart.js'%}">#}
+{#</script>#}
+{#{% endblock %}#}
+
+{% block title %} Корзина{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="title">Корзина</h1>
+        <ul class="navigation">
+            <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+            <li class="link"><a href="{% url 'cart' %}" class="current-page">Корзина</a></li>
+        </ul>
+        <div class="banner">
+            <ul class="items-category">
+                <li class="category">Товар</li>
+                <li>Цена</li>
+                <li>Количество</li>
+                <li>Всего</li>
+            </ul>
+            <div class="bottom-line"></div>
+
+            <div class="products-list">
+                <div class="good-appearance">
+                    <span class="material-symbols-outlined delete-btn">close</span>
+                    <img src="{% static 'cart/img/t-shirt.jpg' %}" alt="Футболка" class="image-item">
+                    <p class="good-text">Футболка USA</p>
+                </div>
+
+                <div class="price">$129</div>
+
+                <div class="good-quantity">
+                    <button class="plus-btn" type="button" name="button">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    <input type="text" name="name" value="1">
+                    <button class="minus-btn" type="button" name="button">
+                        <span class="material-symbols-outlined">remove</span>
+                    </button>
+                </div>
+
+                <div class="total-price">$129</div>
+            </div>
+
+            <div class="manage-cart">
+                <form action="/static"><label for="name"></label>
+                    <input type="text" id="name" name="name" class="coupon-form" placeholder="Введите купон">
+                    <input type="submit" value="Применить купон" class="btn-coupon">
+                    <input type='button' onclick='window.location.reload()' value='Обновить корзину'
+                           class="refresh-cart">
+
+                </form>
+
+            </div>
+            <div class="summary">
+                <ul>
+                    <li class="summary-item">Подытог:</li>
+                    <li>$129</li>
+                </ul>
+                <div class="total">
+                    <ul>
+                        <li>Итого:</li>
+                        <li>$129</li>
+                    </ul>
+                    <form action="{% url 'checkout' %}" method="get">
+                        <input type="submit" value="Оформить заказ" class="place-order">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

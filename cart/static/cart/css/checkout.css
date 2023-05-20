@@ -1,0 +1,96 @@
+.order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-item {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #000000;
+    color: #868686;
+    font-size: 18px;
+}
+
+.reg-form input, .address input, .address textarea{
+    width: 350px;
+    height: 40px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #000000;
+    font-size: 18px;
+}
+
+.address textarea {
+    resize: none;
+}
+
+.buyer-info {
+    width: 350px;
+}
+
+.order-title {
+    margin-bottom: 30px;
+}
+
+.address {
+    padding-bottom: 81px;
+}
+
+.order-msg {
+    resize: none;
+}
+
+.order-quantity {
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+}
+
+.payment {
+    margin-top: 70px;
+}
+
+.total-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-order li {
+    margin-bottom: 30px;
+}
+
+.total-quantity > li:last-child, .total-sum > li:last-child {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+input [type="radio"] {
+    accent-color: #000000;
+}
+
+.card-pay {
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+}
+
+.card-pay, .money-pay {
+    accent-color: #000000;
+}
+
+.place-order {
+    background: #6E9C9F;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 22px 50px;
+}
+
+.place-order:hover {
+    background: #509498;
+    transition: 0.4s;
+    cursor: pointer;
+}

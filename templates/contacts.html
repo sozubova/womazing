@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+{% block title %} Контакты{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="title">Контакты</h1>
+        <ul class="navigation">
+            <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+            <li class="link"><a href="{% url 'about-brand' %}" class="current-page">Контакты</a></li>
+        </ul>
+
+        <div class="banner">
+            <p class="map">Карта с любой точкой</p>
+        </div>
+        <div class="banner list-of-contacts">
+            <ul class="contact-list">
+                <li class="contact-item">Телефон</li>
+                <li><a href="tel:84958235412"></a> +7 (495) 823-54-12</li>
+            </ul>
+            <ul class="contact-list">
+                <li class="contact-item">E-mail</li>
+                <li><a href="mailto:info@sitename.com"></a> info@sitename.com</li>
+            </ul>
+            <ul class="contact-list">
+                <li class="contact-item">Адрес</li>
+                <li>г. Москва, 3-я улица Строителей, 25</li>
+            </ul>
+        </div>
+        <div class="banner feedback">
+            <h3>Напишите нам</h3>
+            <div class="forms">
+                <form action="#" method="POST">
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" class="form-item" placeholder="Имя"><br>
+
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" class="form-item" placeholder="E-mail"><br>
+
+                    <label for="tel"></label>
+                    <input type="tel" id="tel" name="email" class="form-item" placeholder="Телефон"><br>
+
+                    <label for="message"></label>
+                    <textarea id="message" name="message" class="form-item form-msg" placeholder="Сообщение"></textarea><br>
+
+                    <input type="submit" value="Отправить" class="btn-send">
+                </form>
+
+            </div>
+            <p class="successfully-sent "> Сообщение успешно отправлено</p>
+        </div>
+    </div>
+{% endblock %}

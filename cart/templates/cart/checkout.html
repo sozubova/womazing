@@ -1,0 +1,150 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/checkout.css' %}">
+{% endblock %}
+{% block title %} Корзина{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="title">Оформление заказа</h1>
+        <ul class="navigation">
+            <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+            <li class="link"><a href="{% url 'checkout' %}" class="current-page">Оформление заказа</a></li>
+        </ul>
+        <div class="banner">
+            <div class="order">
+
+                <div class="buyer-info">
+                    <h3 class="order-title">Данные покупателя</h3>
+                    <form action="#" method="post">
+                        {% csrf_token %}
+
+                        <div class="reg-form">
+                            {% for field in form.name %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+
+                            {% for field in form.email %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+
+                            {% for field in form.phone %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+                        </div>
+                        <h3 class="order-title">Адрес получателя</h3>
+                        <div class="address">
+                            {% for field in form.country %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+
+                            {% for field in form.city %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+
+                            {% for field in form.street %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+
+                            {% for field in form.house %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+                            {% for field in form.flat %}
+                                {{ field.label_tag }}
+                                {{ field.errors }}
+                                {{ field }}
+                            {% endfor %}
+                            {{ form.message }}
+                        </div>
+                        <button type="submit">Отправить</button>
+                    </form>
+
+                    {#                        <h3 class="order-title">Данные покупателя</h3>#}
+                    {#                        <label for="name"></label>#}
+                    {#                        <input type="text" id="name" name="name" class="form-item" placeholder="Имя"><br>#}
+                    {##}
+                    {#                        <label for="email"></label>#}
+                    {#                        <input type="email" id="email" name="email" class="form-item" placeholder="E-mail"><br>#}
+                    {##}
+                    {#                        <label for="tel"></label>#}
+                    {#                        <input type="tel" id="tel" name="email" class="form-item" placeholder="Телефон"><br>#}
+                    {#                    </div>#}
+                    {#                    <div class="address">#}
+                    {#                        <h3 class="order-title">Адрес получателя</h3>#}
+                    {#                        <label for="country"></label>#}
+                    {#                        <input type="text" id="country" name="country" class="form-item" placeholder="Страна"><br>#}
+                    {##}
+                    {#                        <label for="city"></label>#}
+                    {#                        <input type="text" id="city" name="city" class="form-item" placeholder="Город"><br>#}
+                    {##}
+                    {#                        <label for="street"></label>#}
+                    {#                        <input type="text" id="street" name="street" class="form-item" placeholder="Улица"><br>#}
+                    {##}
+                    {#                        <label for="house"></label>#}
+                    {#                        <input type="number" id="house" name="house" class="form-item" placeholder="Дом"><br>#}
+                    {##}
+                    {#                        <label for="flat"></label>#}
+                    {#                        <input type="number" id="flat" name="flat" class="form-item" placeholder="Квартира"><br>#}
+                    {#                    </div>#}
+                    {#                    <div class="comments">#}
+                    {#                        <h3 class="order-title">Комментарии</h3>#}
+                    {#                        <label for="message"></label>#}
+                    {#                        <textarea id="message" name="message" class="form-item order-msg"#}
+                    {#                                  placeholder="Сообщение"></textarea><br>#}
+                </div>
+
+                <div class="order-quantity">
+                    <div class="order-structure">
+                        <h3 class="order-title">Ваш заказ</h3>
+                        <div class="total-order">
+                            <ul class="total-quantity">
+                                <li>Товар</li>
+                                <li>Футболка USA</li>
+                                <li>Подытог</li>
+                                <li>Итого</li>
+                            </ul>
+                            <ul class="total-sum">
+                                <li>Всего</li>
+                                <li>$129</li>
+                                <li>$129</li>
+                                <li>$129</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="payment">
+                        <h3 class="order-title">Способы оплаты</h3>
+                        <input type="radio" name="payment" id="payment" class="money-pay">
+                        <label for="payment">Оплата наличными</label><br>
+                        <input type="radio" name="payment" id="payment" class="card-pay">
+                        <label for="payment">Оплата картой</label><br>
+
+                        <form action="{% url 'order-success' %}" method="get">
+                            <input type="submit" value="Разместить заказ" class="place-order">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

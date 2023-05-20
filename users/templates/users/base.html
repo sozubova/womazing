@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+{% endblock %}
+
+{% block title %} Магазин {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+{#        <a href="{% url 'logout' %}">logout</a>#}
+    {% else %}
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/add-product.css' %}">
+
+{% endblock %}
+{% block title %}Добавить товар{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="title">Добавить товар</h1>
+        <div class="banner">
+            <div class="add-product-banner">
+                {% csrf_token %}
+                <form method="post" enctype="multipart/form-data" class="add-product">
+                    {% csrf_token %}
+                    <div class="add-product-form">
+                        {{ form.title }}
+                        {{ form.category}}
+                        <p class="add-category">Добавить новую категорию:</p>
+                        {{ form.new_category }}
+                        {{ form.cover }}
+                        {{ form.price }}
+                        {{ form.discount_price }}
+
+                        <p>Выберите размер</p>
+                        {{ form.size }}
+                        <p>Выберите цвет</p>
+                        <ul class="color-choice-list">
+                            {% for item in form.color %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <button type="submit" class="btn-text">Сохранить</button>
+                </form>
+                {#                    {% for item in form.name %}#}
+                {#                        {{ field.label_tag }}#}
+                {#                        {{ field.errors }}#}
+                {#                        {{ field }}#}
+                {#                    {% endfor %}#}
+
+                {#                {% for b in data %}#}
+                {#                    <p>{{ b.title }}</p>#}
+                {#                    <img src="{{ b.cover.url }}" alt="Product">#}
+                {#                {% endfor %}#}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

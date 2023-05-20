@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/product-success.css' %}">
+
+{% endblock %}
+{% block title %}Успешно{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="title">Редактирование товара</h1>
+        <div class="banner">
+            <div class="banner-success">
+                <div class="success-info">
+                    <span class="material-symbols-outlined size-96">priority</span>
+                    <div class="list-success">
+                        <ul class="order-success">
+                            <li><h3>Товар успешно добавлен</h3></li>
+                            <li>Желаете добавить еще?</li>
+                        </ul>
+                        <a href="{% url 'add-product' %}" class="btn-add">Добавить товар</a>
+                    </div>
+                </div>
+                <a href="{% url 'homepage' %}" class="btn-homepage"> Перейти на главную</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/add-product.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/edit-product.css' %}">
+
+{% endblock %}
+{% block title %}Редактировать товар{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="title">Редактировать товар</h1>
+        <div class="banner">
+            <div class="edit-product-banner">
+                {% csrf_token %}
+                <form method="post" enctype="multipart/form-data" class="edit-product">
+                    {% csrf_token %}
+                    <div class="product-data">
+                        <div class="product-image">
+                            <img src="{{ product.image_url }}" alt="{{ product.title }}">
+                        </div>
+                        <div class="product-description">
+                            <ul class="product-title">
+                                <li class="product-name"> Название:</li>
+                                <li>{{ form.title }} </li>
+                            </ul>
+                            <ul class="product-title">
+{#                                <li class="product-name"> Модель:</li>#}
+                                {% if form.new_category %}
+                                    <li class="new_category">{{ form.new_category }}</li>
+                                    <li class="category">{{ form.category }}</li>
+                                {% else %}
+                                    <li class="category">{{ product.category }}</li>
+                                {% endif %}
+{#                                <li>{{ form.category }} </li>#}
+                            </ul>
+                            <ul class="price-items">
+                                <li class="product-name">Цена:</li>
+                                {% if form.discount_price %}
+                                    <li class="dollar">{{ form.discount_price }}</li>
+                                    <li class="dollar original-price">{{ form.price }}</li>
+                                {% else %}
+                                    <li class="dollar">{{ product.price }}</li>
+                                {% endif %}
+                                {#                                <li>{{ form.price }}</li>#}
+                            </ul>
+
+                            <p class="subtitle">Выберите размер</p>
+                            <ul class="size-choice-list">
+                                {% for item in form.size %}
+                                    <li>
+                                        {{ item }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <p class="subtitle">Выберите цвет</p>
+                            <ul class="color-choice-list">
+                                {% for item in form.color %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-text">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

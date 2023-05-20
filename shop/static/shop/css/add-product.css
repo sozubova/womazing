@@ -1,0 +1,219 @@
+.add-product-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 102px;
+}
+
+
+.add-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.add-product input {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    font-size: 19px;
+    padding-top: 10px;
+    border-bottom: 1px solid #000000;
+
+}
+
+.form-control {
+    margin-bottom: 40px;
+    background-color: white;
+    font-size: inherit;
+    font-weight: normal;
+}
+
+/*.product-image {*/
+/*    width: 536px;*/
+/*    height: 610px;*/
+/*    object-fit: cover;*/
+/*}*/
+
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#id_cover {
+    border-bottom: none;
+}
+
+input[type="file"]::before {
+    content: "Выберите фото";
+    padding-bottom: 10px;
+    line-height: 1.4em;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: #868686;;
+    visibility: visible;
+
+}
+
+.open-image {
+    margin: 0 auto;
+    font-size: 19px;
+    padding-top: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.open-image input {
+    font-size: 19px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.add-category {
+    margin-top: 20px;
+    color: #868686;
+}
+
+.add-product-form p {
+    margin-bottom: 30px;
+}
+
+
+/*блок с выбором размера*/
+.size-choice-list {
+    margin-bottom: 40px;
+}
+
+.size-choice-list li {
+    height: 55px;
+    padding-top: 14px;
+    font-size: 17px;
+    margin-right: 14px;
+}
+
+.size-choice-list label {
+    margin-left: -3px;
+}
+
+
+input[name=size]:checked {
+    accent-color: black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.size-button {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    transition: 0.4s;
+    width: 46px;
+    height: 46px;
+    padding-top: 6px;
+    font-size: 17px;
+    margin-right: 14px;
+}
+
+
+.size-button:hover {
+    color: #FFFFFF;
+    background-color: black;
+}
+
+
+/*блок с выбором цвета */
+.color-choice-list, .size-choice-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.color-choice-list li {
+    width: 41px;
+    height: 41px;
+    border-radius: 100px;
+    margin-right: 14px;
+}
+
+.color-choice-list label {
+    text-align: center;
+    transition: 0.4s;
+    width: 42px;
+    height: 42px;
+    padding-top: 6px;
+    font-size: 17px;
+    margin-right: 14px;
+}
+
+/*кнопки выбора цвета*/
+.color-choice-list input[name=color]:focus {
+    opacity: 0.09;
+    height: inherit;
+    width: inherit;
+}
+
+.color-choice-list input[name=color]:not(:checked) {
+    opacity: 0.09;
+    height: inherit;
+    width: inherit;
+}
+
+.color-choice-list input[name=color]:checked {
+    opacity: 0.09;
+    height: inherit;
+    width: inherit;
+    accent-color: white;
+}
+
+.color-choice-list li:nth-child(1) {
+    background: linear-gradient(0deg, #927876, #927876), #927876;
+}
+
+.color-choice-list li:nth-child(2) {
+    background: #D5D5D5;
+}
+
+.color-choice-list li:nth-child(3) {
+    background: #FD9696;
+}
+
+.color-choice-list li:nth-child(4) {
+    background: #FDC796;
+}
+
+
+.color-choice-list label {
+    color: transparent;
+}
+
+.color-choice-list {
+    margin-bottom: 20px;
+}
+
+.color-button:hover {
+    border: 1px solid #000000;
+}
+
+.btn-text {
+    width: 253px;
+    height: 68px;
+    background: #6E9C9F;
+    line-height: 1.4em;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-block;
+
+    padding: 22px 50px;
+    margin: 15px auto 0 auto;
+}
+
+.btn-text:hover {
+    background: #509498;
+    transition: 0.4s;
+}
+
+
+

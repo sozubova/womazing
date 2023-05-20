@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    {% block css_additional %} {% endblock %}
+    <link rel="icon" href="{% static 'img/little-logo.svg' %}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet">
+    {% block js_additional %} {% endblock %}
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="nav">
+            <a href="{% url 'homepage' %}"><img src="{% static 'img/logo-womazing.svg' %}" alt="womazing" class="logo"></a>
+            <ul class="menu">
+                <li class="nav-items"><a href="{% url 'homepage' %}" class="nav-link">Главная</a></li>
+                <li class="nav-items"><a href="{% url 'shop' %}" class="nav-link">Магазин</a></li>
+                <li class="nav-items"><a href="{% url 'about-brand' %}" class="nav-link">О бренде</a></li>
+                <li class="nav-items"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="user-items">
+                <button class="phone "><span class="material-symbols-outlined size-26">phone_enabled</span></button>
+                <a href="tel:84958235412" class="phone-number">+7(495)823-54-12</a>
+                <a href="{% url 'users:registration' %}" class="account"><span class="material-symbols-outlined size-26">person</span></a>
+                <a href="{% url 'cart' %}" class="cart "><span
+                        class="material-symbols-outlined size-26">shopping_basket</span></a>
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %} {% endblock %}
+<footer>
+    <div class="container">
+        <div class="footer-nav">
+            <a href="{% url 'homepage' %}"><img src="{% static 'img/logo-womazing.svg' %}" alt="womazing"></a>
+            <ul class="menu">
+                <li class="nav-items"><a href="{% url 'homepage' %}" class="nav-link">Главная</a></li>
+                <li class="nav-items"><a href="{% url 'shop' %}" class="nav-link">Магазин</a></li>
+                <li class="nav-items"><a href="{% url 'about-brand' %}" class="nav-link">О бренде</a></li>
+                <li class="nav-items"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="footer-user-items">
+                <a href="tel:84958235412" class="footer-phone-number">+7(495)823-54-12</a>
+                <a href="mailto:hello@womazing.com">hello@womazing.com</a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <ul class="privacy">
+                <li><a href="#">© Все права защищены</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Публичная оферта</a></li>
+            </ul>
+            <ul class="catalog">
+                {% for cat in category %}
+                    {% if cat.name != 'NEW_CATEGORY' %}
+                        <li><a href="{{ cat.get_slug_category }}">{{ cat }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul class="contacts">
+                <li>
+                    <ul class="social-networks">
+                        <li><a href="#"><img src="{% static 'img/telegram.png' %}" alt="Telegram" class="telegram"></a>
+                        </li>
+                        <li><a href="#"><img src="{% static 'img/whatsup.png' %}" alt="What's up" class="whatsup"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="{% static 'img/mir_pay.png' %}" alt="Mir" class="mir_pay"></a></li>
+            </ul>
+
+        </div>
+    </div>
+</footer>
+</body>
+</html>

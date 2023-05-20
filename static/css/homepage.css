@@ -1,0 +1,271 @@
+
+.main-banner {
+    padding-top: 79px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 130px;
+    max-height: 786px;
+}
+
+.banner-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 585px;
+    margin-top: 186px;
+}
+
+.banner-title {
+    text-align: justify;
+    width: 554px;
+}
+
+.banner-text {
+    padding-top: 45px;
+    line-height: 1.4em;
+    text-align: right;
+    letter-spacing: 0.02em;
+    max-width: 400px;
+}
+
+.buttons {
+    text-align: center;
+    padding-top: 50px;
+    margin-left: 79px;
+}
+
+.btn-arrow {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 68px;
+    height: 68px;
+    background: rgba(110, 156, 159, 0.1);
+    padding: 20px 20px;
+}
+
+.btn-text {
+    width: 253px;
+    height: 68px;
+    background: #6E9C9F;
+    line-height: 1.4em;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-block;
+
+    padding: 22px 50px;
+    margin-left: -6px;
+}
+
+.btn-text:hover {
+    background: #509498;
+    transition: 0.4s;
+}
+
+
+.banner-photo {
+    margin-left: 145px;
+}
+
+.hat {
+    position: relative;
+    top: -258px;
+    right: 338px;
+}
+
+.summer-hat {
+    position: relative;
+    top: -544px;
+    right: -319px;
+}
+
+/*карточки товаров*/
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 0 auto 65px auto;
+}
+
+.card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+    height: 574px;
+    color: #FFFFFF;
+}
+
+.card-img {
+    height: 100%;
+    overflow: hidden;
+}
+
+.link-effect {
+    color: #FFFFFF;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.effect-to-right {
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card:hover > div.effect-to-right {
+    visibility: visible;
+}
+
+.card div.effect-to-right {
+    opacity: 0;
+    background: rgba(110, 156, 159, 0.64); /* Фон блока при наведении */
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+}
+
+span.size-40 {
+    font-size: 40px;
+    font-variation-settings: 'OPSZ' 40;
+}
+
+.card:hover div.effect-to-right {
+    opacity: 1;
+    transform: translate(0px, 0px) rotate(0deg);
+}
+
+
+/*.effect-to-right {*/
+/*    visibility: hidden;*/
+/*    width: inherit;*/
+/*    height: inherit;*/
+/*    position: absolute;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.card:hover > div.effect-to-right {*/
+/*    visibility: visible;*/
+/*}*/
+
+/*.card div.effect-to-right {*/
+/*    opacity: 0;*/
+/*    background: rgba(110, 156, 159, 0.64); !* Фон блока при наведении *!*/
+/*    transition: all 0.4s ease-in-out;*/
+/*    text-align: center;*/
+/*}*/
+
+/*span.size-40 {*/
+/*    font-size: 40px;*/
+/*    font-variation-settings: 'OPSZ' 40;*/
+/*}*/
+
+/*.card:hover div.effect-to-right {*/
+/*    opacity: 1;*/
+/*    transform: translate(0px, 0px) rotate(0deg);*/
+/*}*/
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 24px auto 9px auto;
+    text-align: center;
+}
+
+
+.card-prices {
+    display: flex;
+    color: #9C9C9C;
+    margin: 0 auto;
+}
+
+
+.card-price-discount {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+
+.btn-transparent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 22px 37px;
+    width: 298px;
+    height: 83px;
+    border: 1px solid #6E9C9F;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    color: #6E9C9F;
+}
+
+.btn-transparent:hover {
+    background: #6E9C9F;
+    color: #FFFFFF;
+    transition: 0.4s;
+}
+
+/*Принципы*/
+.info-sign {
+    width: 61px;
+    height: 61px;
+    margin-bottom: 37px;
+}
+
+.speed {
+    margin-top: -4px;
+}
+
+.principles-text {
+    margin-top: 24px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.command-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.command-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 290px;
+}
+
+
+.command-item {
+    margin: 28px auto;
+}
+
+.about-brand {
+    color: #6E9C9F;
+    height: 31px;
+}
+
+.about-brand:hover {
+    border-bottom: 1px solid #CEDEDF;
+
+}

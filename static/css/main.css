@@ -1,0 +1,314 @@
+/*обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-text-fill-color: #333333 !important;
+    color: #333333 !important;
+    background-color: #ffffff !important;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+    text-decoration: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+/*конец обнуления*/
+
+
+/*header*/
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+    line-height: 1.1em;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: 55px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 92px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.banner {
+    margin-bottom: 130px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;;
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+    letter-spacing: 0.02em;
+    line-height: 1.4em;
+}
+
+a {
+    color: black;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+
+}
+
+.navigation {
+    margin-bottom: 135px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1.4em;
+    justify-content: space-between;
+}
+
+.nav-items {
+    margin-left: 45px;
+    max-width: 8em;
+}
+
+.nav-link:hover {
+    color: #6E9C9F;
+    transition: 0.4s;
+}
+
+.user-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.phone, .cart, .account {
+
+    background: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 26px;
+    width: 26px;
+}
+
+.account {
+    display: flex;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.account:hover, .cart:hover {
+    color: #509498;
+}
+
+.phone:hover {
+    font-weight: 500;
+    background-color: #509498;
+    color: #FFFFFF;
+    transition: 0.4s;
+    border-radius: 2px;
+
+}
+
+.phone-number {
+    letter-spacing: 0.13em;
+    font-size: 21px;
+    margin: 0 6px;
+}
+
+span.size-26 {
+    font-size: 26px;
+    font-variation-settings: 'OPSZ' 40;
+}
+
+/*footer*/
+footer {
+    background-color: #F1EADC;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 15px;
+    padding-bottom: 80px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 80px;
+
+}
+
+.footer-user-items {
+    display: block;
+}
+
+
+.footer-user-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+    max-width: 14em;
+    line-height: 1.4em;
+
+}
+
+.footer-phone-number {
+    text-align: end;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    line-height: 1.6em;
+    height: 97px;
+}
+
+.privacy, .catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.catalog {
+    margin-left: -250px;
+}
+
+.catalog li:hover, .privacy li:hover {
+    color: #6E9C9F;
+    border-bottom: 2px solid rgba(98, 61, 61, 0.76);
+}
+
+
+.social-networks {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.telegram, .whatsup {
+    height: 28px;
+    margin-right: 12px;
+}
+
+.whatsup:last-child {
+    margin-right: auto;
+}
+
+.mir_pay {
+    height: 31px;
+    margin-top: 21px;
+}

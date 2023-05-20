@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/one-item.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/shop_main_page.css' %}">
+{#    <link rel="stylesheet" href="{% static 'shop/css/add-product.css' %}">#}
+
+{% endblock %}
+{% block title %}{{ products.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="title">{{ products.title }}</h1>
+        <ul>
+            <li class="link"><a href="{% url 'homepage' %}" class="visited-link">Главная</a></li>
+            <li class="link"><a href="{% url 'category' category_slug=products.category.slug %}"
+                                class="visited-link">{{ categories }}</a></li>
+            <li class="link"><a href="{% url 'one-item' category_slug=products.category.slug prod_slug=products.slug %}"
+                                class="current-page">{{ products.title }}</a></li>
+        </ul>
+        <div class="banner">
+            <div class="product-banner">
+                <img src="{{ products.image_url }}" alt="{{ products.title }}" class="product-img">
+                <div class="product-characteristic">
+                    <ul class="prices margin-bottom">
+                        {% if products.discount_price %}
+                            <li class="price-discount dollar">{{ products.discount_price }}</li>
+                            <li class="price-common dollar">{{ products.price }}</li>
+                        {% else %}
+                            <li class="price-discount  dollar">{{ products.price }}</li>
+                        {% endif %}
+                        {#                        <li class="price-discount dollar">{{ products.price }}</li>#}
+                        {#                        <li class="price-common dollar">450</li>#}
+                    </ul>
+                    <div class="choose-size margin-bottom">
+                        <p class="subtitle">Выберите размер</p>
+                        <ul class="size-choice-list">
+                            {% for size in  products.size.all %}
+                                <li class="size-button">
+                                    {{ size }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="choose-color">
+                        <p class="subtitle">Выберите цвет</p>
+                        <ul class="color-choice-list">
+                            {% for color in products.color.all %}
+                                <li class="color-button" style="background-color:{{ color.slug }}"></li>
+                            {% endfor %}
+                        </ul>
+{#                        <div class="colors">#}
+{#                            {% for color in colors %}#}
+{#                                <div class="color" style="background-color:{{ color.slug }};">Lorem ipsum</div>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
